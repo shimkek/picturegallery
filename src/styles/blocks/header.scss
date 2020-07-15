@@ -1,0 +1,42 @@
+.header {
+    top: 0px;
+    height: 100px;
+    width: 100%;
+	background-color: $main-color;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0px 1px 15px ;
+
+    &__contents {
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        margin-left: 200px;
+        cursor: pointer;
+    }
+
+    &__name {
+        text-decoration: none;
+        cursor: pointer;
+        margin-left: 20px;
+        font-size: 45px;
+        font-weight: 800;
+        color: rgb(53, 166, 253);
+
+     &:hover {
+         color: #dddddd;
+     }
+    }
+
+    &__pic {
+
+        object-fit: contain;
+        width: 100px;
+        height: 100px;
+    }
+}
