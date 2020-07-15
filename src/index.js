@@ -7,7 +7,7 @@ const addPoster = () => {
     gallery__poster.className = "gallery__poster";
     const gallery__img = document.createElement('img');
     gallery__img.className = "gallery__img";
-    const picSrc = 'https://picsum.photos/1920/1080?random='+ picQuantity;
+    const picSrc = 'https://picsum.photos/1920/1080?random='+ picQuantity+'.jpg';
     gallery__img.setAttribute("src", picSrc);
     gallery__poster.appendChild(gallery__img);
     gallery.appendChild(gallery__poster);
@@ -24,6 +24,3 @@ document.getElementById("loadMoreButton").addEventListener("click", function(){
   });
 
 
-//         <div class="gallery__poster">
-//         <img class="gallery__img" src="https://picsum.photos/1920/1080">
-//         </div>
