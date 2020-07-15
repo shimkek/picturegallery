@@ -10,8 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
-    <script src="./index.js"></script>
-    <script src="./scripts.js"></script>
+
 </head>
 
 <body class="body">
@@ -26,30 +25,30 @@
 
     <div class="gallery" id="gallery">
         <div class="gallery__poster">
-            <img class="gallery__img" src="https://picsum.photos/g/1920/1080">
+            <img class="gallery__img" src="https://picsum.photos/g/1920/1080?random=1">
         </div>
         <div class="gallery__poster">
-            <img class="gallery__img" src="https://picsum.photos/g/1920/1080">
+            <img class="gallery__img" src="https://picsum.photos/g/1920/1080?random=2">
         </div>
         <div class="gallery__poster">
-            <img class="gallery__img" src="https://picsum.photos/1920/1080">
+            <img class="gallery__img" src="https://picsum.photos/1920/1080?random=3">
         </div>
         <div class="gallery__poster">
-            <img class="gallery__img" src="https://picsum.photos/1920/1080">
+            <img class="gallery__img" src="https://picsum.photos/1920/1080?random=4">
         </div>
         <div class="gallery__poster">
-            <img class="gallery__img" src="https://picsum.photos/1920/1080">
+            <img class="gallery__img" src="https://picsum.photos/1920/1080?random=5">
         </div>
         <div class="gallery__poster">
-            <img class="gallery__img" src="https://picsum.photos/1920/1080">
+            <img class="gallery__img" src="https://picsum.photos/1920/1080?random=6">
         </div>
     </div>
 
     <div class="loadmore">
-        <button class="loadmore__button" onclick = "addPoster()" >
+        <button class="loadmore__button" id="loadMoreButton">
             Load more
         </button>
     </div>
 </body>
-
+<script src="./index.js"></script>
 </html>
