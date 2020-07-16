@@ -23,4 +23,3 @@ document.getElementById("loadMoreButton").addEventListener("click", function(){
     loadMore();
   });
 
-
