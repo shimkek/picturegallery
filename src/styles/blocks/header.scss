@@ -2,7 +2,7 @@
     top: 0px;
     height: 100px;
     width: 100%;
-	background-color: $main-color;
+	background-color: $header-color;
     position: fixed;
     z-index: 1;
     box-shadow: 0px 1px 15px ;
@@ -21,12 +21,13 @@
     }
 
     &__name {
-        text-decoration: none;
-        cursor: pointer;
-        margin-left: 20px;
-        font-size: 45px;
-        font-weight: 800;
-        color: rgb(53, 166, 253);
+        font-size: 3rem;
+        margin-left: 10px;
+	    color: #fcedd8;
+	   	font-family: 'Niconne', cursive;
+	    font-weight: 700;
+        text-shadow: 5px 5px 0px #eb452b, 
+                    10px 10px 0px #efa032;
 
      &:hover {
          color: #dddddd;
@@ -34,7 +35,6 @@
     }
 
     &__pic {
-
         object-fit: contain;
         width: 100px;
         height: 100px;

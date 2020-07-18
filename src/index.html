@@ -24,30 +24,41 @@
     </header>
 
     <div class="gallery" id="gallery">
-        <div class="gallery__poster">
+        <div class="gallery__poster" id="1">
             <img class="gallery__img" src="https://picsum.photos/1920/1080?random=1">
         </div>
-        <div class="gallery__poster">
+        <div class="gallery__poster" id="2">
             <img class="gallery__img" src="https://picsum.photos/1920/1080?random=2">
         </div>
-        <div class="gallery__poster">
+        <div class="gallery__poster" id="3">
             <img class="gallery__img"" src="https://picsum.photos/1920/1080?random=3">
         </div>
-        <div class="gallery__poster">
+        <div class="gallery__poster" id="4">
             <img class="gallery__img" src="https://picsum.photos/1920/1080?random=4">
         </div>
-        <div class="gallery__poster">
+        <div class="gallery__poster" id="5">
             <img class="gallery__img" src="https://picsum.photos/1920/1080?random=5">
         </div>
-        <div class="gallery__poster">
+        <div class="gallery__poster" id="6">
             <img class="gallery__img" src="https://picsum.photos/1920/1080?random=6">
         </div>
     </div>
 
-    <div class="loadmore">
+    <div class="loadmore" id="loadmore">
         <button class="loadmore__button" id="loadMoreButton">
-            Load more
+            ↻ Load more
         </button>
+    </div>
+
+    <div class="maximized" id="maximized">
+        <button class="maximized__close-button" id="close-button">×</button>
+        <div class="maximized__img-holder">
+            <img class= "maximized__img" id="maximized__img" src=""> 
+        </div>
+        <p class="maximized__text">Author:<span class="maximized__text_aligned-right">unsplash.com</span></p>
+        <p class="maximized__text">Name:<span class="maximized__text_aligned-right">random photo</span></p>
+        <p class="maximized__text">Time created:<span class="maximized__text_aligned-right">1941 08 05</span></p>
+        <button class="maximized__download-button" id="download-button">⭳ Download picture</button>
     </div>
 </body>
 <script src="./index.js"></script>

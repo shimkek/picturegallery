@@ -1,6 +1,10 @@
-$main-color: #457b9d; 
-$background-color: #1D3557;
-@import './base.scss';
+$header-color: #3AAFB9; //457b9d
+$background-color: #1B2F33;//1D3557
+$green-button-color: #99D17B;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import './normalize.css';
+@import './base.scss';
 @import './blocks/header.scss';
 @import './blocks/gallery.scss';
+@import './blocks/loadmore.scss';
+@import './blocks/maximized.scss';
