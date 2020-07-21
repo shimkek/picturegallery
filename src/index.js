@@ -1,27 +1,30 @@
 var picQuantity = 6;
 var isMaximized = false;
-
+//добавляет увеличенный просмотр элементу
 const onclick = (id) => {
-    document.getElementById(id).addEventListener('click', function () {
-        showMaximized(id);
-    });
+    const el = document.getElementById(id);
+    el.addEventListener('click', showMaximized);
 }
-
+//добавляет постер в галлерею, устанавливает id, добавляет увеличенный просмотр
 const addPoster = () => {
     picQuantity++;
     const gallery = document.getElementById('gallery');
     const gallery__poster = document.createElement('div');
-    gallery__poster.className = "gallery__poster";
     const gallery__img = document.createElement('img');
-    gallery__img.className = "gallery__img";
     const picSrc = 'https://picsum.photos/1920/1080?random=' + picQuantity + '.jpg';
+    
+    gallery__poster.className = "gallery__poster";
+    gallery__img.className = "gallery__img";
+
     gallery__img.setAttribute("src", picSrc);
     gallery__img.id = picQuantity;
+
     gallery__poster.appendChild(gallery__img);
     gallery.appendChild(gallery__poster);
-    onclick(picQuantity); //doesn't work with random photos
-}
 
+    onclick(picQuantity);
+}
+//создает 6 постеров
 const loadMore = () => {
     for (i = 0; i < 6; i++) {
         addPoster();
@@ -29,50 +32,48 @@ const loadMore = () => {
 }
 
 const minimizeInterface = () => {
-    document.getElementById('gallery').style.width='1040px';
-    document.getElementById('gallery').style.marginLeft='40px';
-    document.getElementById('loadmore').style.width='1140px';
-    document.getElementById('loadmore').style.marginLeft='0';
+    document.getElementById('gallery').style.width = '1040px';
+    document.getElementById('gallery').style.marginLeft = '40px';
+    document.getElementById('loadmore').style.width = '1140px';
+    document.getElementById('loadmore').style.marginLeft = '0';
 }
 
 const maximizeInterface = () => {
-    document.getElementById('gallery').style.width='1560px';
-    document.getElementById('gallery').style.marginLeft='180px';
-    document.getElementById('loadmore').style.width='100%';
-    document.getElementById('loadmore').style.marginLeft='auto';
+    document.getElementById('gallery').style.width = '1560px';
+    document.getElementById('gallery').style.marginLeft = '180px';
+    document.getElementById('loadmore').style.width = '100%';
+    document.getElementById('loadmore').style.marginLeft = 'auto';
 }
 
-const showMaximized = (pictureID) => {
+const showMaximized = (e) => {
     minimizeInterface();
-   // const imgSrc = "https://picsum.photos/1920/1080?random=" + pictureID;
-   // document.getElementById('maximized__img').setAttribute('src', imgSrc);
-   if (isMaximized === true) {
-    const currentImg = document.getElementById('maximized__img');
-    currentImg.remove();
-   };
+    const pictureID = e.target.id;
+    //убирает предыдущее изображение
+    if (isMaximized === true) {
+        const currentImg = document.getElementById('maximized__img');
+        currentImg.remove();
+    };
     const clone = document.getElementById(pictureID).cloneNode(true);
     clone.className = 'maximized__img';
-    clone.id='maximized__img';
-    document.getElementById('maximized').style.visibility='visible';
+    clone.id = 'maximized__img';
+    document.getElementById('maximized').style.visibility = 'visible';
     document.getElementById('maximized__img-holder').appendChild(clone);
     isMaximized = true;
 }
 
-document.getElementById('loadMoreButton').addEventListener('click', function () {
-    loadMore();
-});
+document.getElementById('loadMoreButton').addEventListener('click', loadMore);
 
 document.getElementById('download-button').addEventListener('click', function () {
     const pic = document.getElementById('maximized__img').cloneNode(true);
-    pic.id='';
+    pic.id = '';
     const img_container = document.createElement('div');
     img_container.className = 'original';
-    img_container.id='original';
-    pic.className= 'original__pic';
+    img_container.id = 'original';
+    pic.className = 'original__pic';
     img_container.appendChild(pic);
     const button = document.createElement('button');
-    button.className= 'original__button';
-    button.id="original__button";
+    button.className = 'original__button';
+    button.id = "original__button";
     const cancelSymbol = document.createTextNode('×');
     button.appendChild(cancelSymbol);
     img_container.appendChild(button);
@@ -82,28 +83,13 @@ document.getElementById('download-button').addEventListener('click', function ()
     });
 });
 
-document.getElementById(1).addEventListener('click', function () {
-    showMaximized(1);
-});
-document.getElementById(2).addEventListener('click', function () {
-    showMaximized(2);
-});
-document.getElementById(3).addEventListener('click', function () {
-    showMaximized(3);
-});
-document.getElementById(4).addEventListener('click', function () {
-    showMaximized(4);
-});
-document.getElementById(5).addEventListener('click', function () {
-    showMaximized(5);
-});
-document.getElementById(6).addEventListener('click', function () {
-    showMaximized(6);
-});
+const galleryImages = document.querySelectorAll('.gallery__img');
+for (i = 0; i < galleryImages.length; i++) {
+    galleryImages[i].addEventListener('click', showMaximized);
+}
+
 document.getElementById('close-button').addEventListener('click', function () {
     maximizeInterface();
-    document.getElementById('maximized').style.visibility='hidden';
+    document.getElementById('maximized').style.visibility = 'hidden';
 });
 
-
-//             <img class= "maximized__img" id="maximized__img" src=""> 
