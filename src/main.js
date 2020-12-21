@@ -27,9 +27,12 @@ const app = Vue.createApp({
         showMaximized (poster) {
             this.maximizedPoster.name = poster.name;
             this.maximizedPoster.coordinates = poster.coordinates;
-            this.maximizedPoster.district - poster.district;
-            this.maximizedPoster.src - poster.src;
+            this.maximizedPoster.district = poster.district;
+            this.maximizedPoster.src = poster.src;
             this.isMaximized = true;
+        },
+        hideMaximized () {
+            this.isMaximized = false
         }
     },
     computed: {
