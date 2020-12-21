@@ -85,6 +85,11 @@ html {
   flex-wrap: wrap;
   align-content: flex-start;
 }
+.gallery_minimized {
+  width: 1040px;
+  margin-left: 40px;
+}
+
 .gallery__poster {
   cursor: pointer;
   width: 480px;
@@ -106,6 +111,10 @@ html {
   margin-bottom: 60px;
   display: flex;
   justify-content: center;
+}
+.loadmore_minimized {
+  width : 1140px;
+  margin-left: 0;
 }
 .loadmore__button {
   padding: 5px 15px 5px 15px;

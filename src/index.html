@@ -24,13 +24,13 @@
         </div>
     </header>
 
-    <div class="gallery">
+    <div class="gallery" :class="{gallery_minimized : isMaximized}">
         <gallery-poster v-for="(poster, index) in gallery" :poster="poster" @maximize-poster="showMaximized"></gallery-poster>
     </div>
 
-    <loadmore-button v-if="this.page < 11"></loadmore-button>
+    <loadmore-button v-if="this.page < 11" :class="{loadmore_minimized : isMaximized}"></loadmore-button>
 
-    <maximized v-if="isMaximized" :poster="maximizedPoster" @exit-maximized="hideMaximized"></maximized>
+    <maximized v-if="isMaximized" :poster="maximizedPoster" @hide-maximized-event="hideMaximized"></maximized>
 
 </div>
     

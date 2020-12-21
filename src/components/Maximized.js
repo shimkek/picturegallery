@@ -8,7 +8,7 @@ app.component('maximized', {
     /*html*/
     `    
     <div class="maximized">
-        <button class="maximized__close-button" @click="$emit('exit-maximized')">×</button>
+        <button class="maximized__close-button" @click="$emit('hide-maximized-event')">×</button>
         <div class="maximized__img-holder">
         <img :src="this.poster.src" class="maximized__img" >
         </div>
