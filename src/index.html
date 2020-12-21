@@ -5,15 +5,16 @@
 <head>
     <meta charset="utf-8">
     <title>Pictures</title>
-    <link rel="stylesheet" href="./styles/index.scss">
+    <link rel="stylesheet" href="./styles/index.css">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
-    <script src="./index.js" defer></script>
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body class="body">
+<div id="app">
     <header class="header">
         <div class="header__contents">
             <a class="header__logo" href="./index.html">
@@ -23,42 +24,28 @@
         </div>
     </header>
 
-    <div class="gallery" id="gallery">
-        <div class="gallery__poster" >
-            <img class="gallery__img" id="1" src="https://picsum.photos/1920/1080?random=1">
-        </div>
-        <div class="gallery__poster" >
-            <img class="gallery__img" id="2" src="https://picsum.photos/1920/1080?random=2">
-        </div>
-        <div class="gallery__poster" >
-            <img class="gallery__img"" id="3" src="https://picsum.photos/1920/1080?random=3">
-        </div>
-        <div class="gallery__poster" >
-            <img class="gallery__img" id="4" src="https://picsum.photos/1920/1080?random=4">
-        </div>
-        <div class="gallery__poster" >
-            <img class="gallery__img" id="5" src="https://picsum.photos/1920/1080?random=5">
-        </div>
-        <div class="gallery__poster" >
-            <img class="gallery__img" id="6" src="https://picsum.photos/1920/1080?random=6">
-        </div>
+    <div class="gallery" id="gallery" >
+        <gallery-poster v-for="(poster, index) in gallery" :poster="poster" @maximize-poster="showMaximized"></gallery-poster>
     </div>
 
-    <div class="loadmore" id="loadmore">
-        <button class="loadmore__button" id="loadMoreButton">
-            ↻ Load more
-        </button>
-    </div>
+    <loadmore-button v-if="this.page < 11"></loadmore-button>
 
-    <div class="maximized" id="maximized">
-        <button class="maximized__close-button" id="close-button">×</button>
-        <div class="maximized__img-holder" id="maximized__img-holder">
+    <maximized v-if="isMaximized" :poster="maximizedPoster"></maximized>
 
-        </div>
-        <p class="maximized__text">Photo by:<span class="maximized__text_aligned-right">unsplash.com</span></p>
-        <p class="maximized__text">Name:<span class="maximized__text_aligned-right">random photo</span></p>
-        <p class="maximized__text">Time created:<span class="maximized__text_aligned-right">1941 08 05</span></p>
-        <button class="maximized__download-button" id="download-button">⭳ Download picture</button>
-    </div>
+</div>
+    
+<!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/GalleryPoster.js"></script>
+    <script src="./components/LoadMoreButton.js"></script>
+    <script src="./components/Maximized.js"></script>
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+    
 </body>
 </html>
